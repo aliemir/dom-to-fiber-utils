@@ -14,12 +14,13 @@ export const getFiberFromElement = (element: HTMLElement): Fiber | null => {
 /**
  * Given a fiber, return the name of the component.
  */
-export const getNameFromFiber = (fiber: Fiber): string | null => {
+export const getNameFromFiber = (fiber: Fiber | null): string | null => {
+  if (!fiber) return null;
   return (
-    fiber.type.displayName ||
-    fiber.type.name ||
-    fiber.elementType.displayName ||
-    fiber.elementType.name ||
+    fiber.type?.displayName ||
+    fiber.type?.name ||
+    fiber.elementType?.displayName ||
+    fiber.elementType?.name ||
     null
   );
 };
