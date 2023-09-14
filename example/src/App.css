@@ -1,0 +1,33 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#selector-toggle {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+  color: dimgray;
+  position: relative;
+}
+
+#selector-toggle::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 4px;
+  height: calc(100% - 8px);
+  border-radius: 2px;
+  background-color: limegreen;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#selector-toggle.active::after {
+  opacity: 1;
+}
