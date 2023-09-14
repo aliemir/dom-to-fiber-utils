@@ -8,6 +8,10 @@ A simple set of utilities to convert DOM elements to React Fiber elements.
 npm install @aliemir/dom-to-fiber-utils
 ```
 
+## Demo
+
+Example App: https://dom-to-fiber-utils-example.vercel.app
+
 ## Exported functions
 
 ### `getFiberFromElement(element: HTMLElement): Fiber | null`

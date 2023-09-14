@@ -10,7 +10,7 @@ npm install @aliemir/dom-to-fiber-utils
 
 ## Demo
 
-Here's an example: https://dom-to-fiber-utils-example.vercel.app
+Example App: https://dom-to-fiber-utils-example.vercel.app
 
 ## Exported functions
 
