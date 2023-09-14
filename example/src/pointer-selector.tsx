@@ -28,6 +28,28 @@ export const PointerSelector = () => {
       >
         toggle selector
       </button>
+      <div
+        style={{
+          opacity: active ? 1 : 0,
+          padding: "8px",
+        }}
+      >
+        Press{" "}
+        <kbd
+          style={{
+            padding: "2px 4px",
+            borderRadius: "4px",
+            background: "whitesmoke",
+            color: "dimgray",
+            border: "0.5px solid silver",
+            boxShadow: "0 1px 1px silver",
+            lineHeight: "1.2",
+          }}
+        >
+          space
+        </kbd>{" "}
+        to one up in tree
+      </div>
       {active && <SelectorBox {...rect} name={name} />}
     </div>
   );
