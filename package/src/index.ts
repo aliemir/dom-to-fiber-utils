@@ -102,3 +102,18 @@ export const getFirstFiberHasName = (fiber: Fiber | null): Fiber | null => {
 
   return getFirstFiberHasName(parent);
 };
+
+/**
+ * Given a fiber, return the name of the first fiber with a name. Looks up the tree.
+ */
+export const getNameOfFirstFiberHasName = (
+  fiber: Fiber | null,
+): string | null => {
+  const firstFiber = getFirstFiberHasName(fiber);
+
+  if (!firstFiber) {
+    return null;
+  }
+
+  return getNameFromFiber(firstFiber);
+};
