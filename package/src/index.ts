@@ -4,11 +4,20 @@ import type { Fiber, Source } from "react-reconciler";
  * Given a dom element, return the fiber associated with it.
  */
 export const getFiberFromElement = (element: HTMLElement): Fiber | null => {
-  const key = Object.keys(element).find((key) =>
-    key.startsWith("__reactFiber$"),
-  ) as keyof HTMLElement | undefined;
+  let target: HTMLElement | null = element;
+  let key: keyof HTMLElement | undefined = undefined;
 
-  return key ? (element[key] as unknown as Fiber) : null;
+  while (!key && target) {
+    key = Object.keys(target).find((key) => key.startsWith("__reactFiber$")) as
+      | keyof HTMLElement
+      | undefined;
+
+    // move to parent if key is not defined
+    if (!key) {
+      target = target.parentElement;
+    }
+  }
+  return key && target ? (target[key] as unknown as Fiber) : null;
 };
 
 /**
