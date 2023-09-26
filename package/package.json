@@ -2,7 +2,7 @@
   "name": "@aliemir/dom-to-fiber-utils",
   "description": "A simple set of utilities to convert DOM elements to React Fiber elements",
   "private": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": {
     "name": "Ali Emir Şen",
     "email": "senaliemir@gmail.com"
