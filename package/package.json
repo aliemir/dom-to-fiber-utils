@@ -2,7 +2,7 @@
   "name": "@aliemir/dom-to-fiber-utils",
   "description": "A simple set of utilities to convert DOM elements to React Fiber elements",
   "private": false,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": {
     "name": "Ali Emir Şen",
     "email": "senaliemir@gmail.com"
@@ -12,12 +12,25 @@
     "url": "https://github.com/aliemir/dom-to-fiber-utils.git",
     "directory": "package"
   },
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "dev": "tsup --watch --format esm,cjs,iife --legacy-output",
-    "build": "tsup --format esm,cjs,iife --minify --legacy-output"
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "types": "node ../shared/generate-declarations.js"
   },
   "dependencies": {
     "react": "^18.0.0",

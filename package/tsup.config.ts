@@ -5,7 +5,9 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: false,
-  dts: false,
+  minify: true,
+  format: ["cjs", "esm"],
+  outExtension: ({ format }) => ({ js: format === "cjs" ? ".cjs" : ".mjs" }),
   platform: "browser",
-  onSuccess: "tsc --project tsconfig.declarations.json",
+  onSuccess: "npm run types",
 });
