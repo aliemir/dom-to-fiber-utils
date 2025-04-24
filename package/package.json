@@ -7,6 +7,7 @@
     "name": "Ali Emir Şen",
     "email": "senaliemir@gmail.com"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/aliemir/dom-to-fiber-utils.git",
